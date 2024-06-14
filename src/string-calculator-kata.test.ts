@@ -9,6 +9,7 @@ describe("String Calculator Kata", () => {
     test('return 0 if empty string is received', () => {
         expect(stringCalculatorKata.add('')).toBe(0);
     });
+
     test('if single number is received then return single number', () => {
         expect(stringCalculatorKata.add('1')).toBe(1);
         expect(stringCalculatorKata.add('5')).toBe(5);
@@ -30,10 +31,11 @@ describe("String Calculator Kata", () => {
     });
     test('numbers bigger than 1000 should be ignored', () => {
         expect(stringCalculatorKata.add('1001,2')).toBe(2);
+        expect(stringCalculatorKata.add('1001,2,5')).toBe(7);
     });
     test('add support for delimiters can be of any length', () => {
         expect(stringCalculatorKata.add("//[***]\\n1***2***3")).toBe(6);
-        expect(stringCalculatorKata.add("//[*][%]\\n1*2%3")).toBe(6);
+        expect(stringCalculatorKata.add("//[*][%]\\n1*5%6")).toBe(12);
     });
 
 })
