@@ -25,6 +25,7 @@ describe("String Calculator Kata", () => {
     });
 
     test('calling Add with a negative number will throw an exception', () => {
+        //@todo add expectation wise unit test as well
         expect(() => stringCalculatorKata.add('1,-2,3')).toThrow('negative numbers not allowed -2');
     });
     test('numbers bigger than 1000 should be ignored', () => {
