@@ -24,4 +24,9 @@ describe("String Calculator Kata", () => {
         expect(stringCalculatorKata.add('1,2')).toBe(3);
         expect(stringCalculatorKata.add('5,5')).toBe(10);
     })
+
+    test('ignore numbers larger than 1000', () => {
+        expect(stringCalculatorKata.add('1001,2')).toBe(2);
+        expect(stringCalculatorKata.add('1001,2,5')).toBe(7);
+    });
 })
