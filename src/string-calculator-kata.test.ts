@@ -29,4 +29,11 @@ describe("String Calculator Kata", () => {
         expect(stringCalculatorKata.add('1001,2')).toBe(2);
         expect(stringCalculatorKata.add('1001,2,5')).toBe(7);
     });
+
+    test('support different delimiters or new lines of any length', () => {
+        expect(stringCalculatorKata.add('//;\n1;2')).toBe(3);
+        expect(stringCalculatorKata.add('//;\n12;15,17')).toBe(44);
+        expect(stringCalculatorKata.add("//[***]\\n1***2***3")).toBe(6);
+        expect(stringCalculatorKata.add("//[*][%]\\n1*5%6")).toBe(12);
+    });
 })
